@@ -12,18 +12,19 @@ main_title = 'Find your perfect house in Austin with AI!'
 # Set the title of the app
 st.title(main_title)
 
-austin_data = pd.read_csv('austin_redfin_scraping_072624.csv').dropna().reset_index().drop(columns=['Unnamed: 0'])
+austin_data = pd.read_csv('redfin_sales_080924.csv').dropna().reset_index().drop(columns=['Unnamed: 0'])
 
 # Create the map
-# map = folium.Map(location=[ZOOM_LAT, ZOOM_LONG], zoom_start=ZOOM_START)
-# for _, row in austin_data.iterrows():
-#     folium.Marker(
-#         location=[row['latitude'], row['longitude']],
-#         popup=f"Property: {row['zip_code']}"
-#     ).add_to(map)
-#
-# # Display the map
-# st_data = st_folium(map, width=725, height=500)
+ZOOM_LAT, ZOOM_LONG, ZOOM_START = 30.266666, -97.733330, 10
+map = folium.Map(location=[ZOOM_LAT, ZOOM_LONG], zoom_start=ZOOM_START)
+for _, row in austin_data.iterrows():
+    folium.Marker(
+        location=[row['latitude'], row['longitude']],
+        popup=f"Property: {row['Zip Code']}"
+    ).add_to(map)
+
+# Display the map
+st_data = st_folium(map, width=725, height=500)
 
 # Initialize or reset the conversation history in session state if not already present
 if 'conversation_history' not in st.session_state:
@@ -49,6 +50,9 @@ def display_conversation():
         st.text_area("You", value=exchange['Client'], height=100, disabled=True)
         st.text_area("AI", value=exchange['AI'], height=100, disabled=True)
 
+# Function to clear the input box
+def clear_text():
+    st.session_state['user_question'] = ''  # Clears the input box
 
 # Display the conversation history
 display_conversation()
@@ -60,6 +64,6 @@ user_question = st.text_input("Talk to me about your dream house:", key="user_qu
 if st.button('Send'):
     process_query(user_question)
     # Clear the input text by re-rendering the UI
-#    st.session_state['user_question'] = ''  # Optional: clear the input box (might need adjustment or removal)
+    # clear_text()  # Optional: clear the input box (might need adjustment or removal)
     # Rerun the script to refresh the UI, indirectly clearing the input field if not cleared by the optional line above
     st.rerun()
