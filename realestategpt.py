@@ -24,7 +24,7 @@ class RealEstateGPT():
         initial_context = self.role_playing_prompt if one_shot else self.conversational_prompt
         self.agent = create_csv_agent(
             ChatOpenAI(temperature=0, model="gpt-3.5-turbo"),
-            'redfin_sales_080924.csv',
+            'data/redfin_sales_080924.csv',
             verbose=True,
             agent_type=AgentType.OPENAI_FUNCTIONS,
             initial_context=initial_context)
