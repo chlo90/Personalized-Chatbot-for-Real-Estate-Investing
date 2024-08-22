@@ -54,11 +54,6 @@ This command will revert your Python environment back to normal.
 ## Upcoming Features 
 1. Find rental comparables (i.e. a way to see estimated rental revenue from similar properties nearby)
 2. Location score (i.e. how desirable is this neighborhood) based on population growth, crime rate, walkability, amenities, etc. 
-
-purchase_price, renovation_cost, loan_amount,
-                                    interest_rate, loan_term, rental_income,
-                                    operating_expenses, vacancy_rate, appreciation_rate,
-                                    sale_year, location_score, market_growth_rate
 3. Financial Investing Metrics 
 - Calculate mortage from purchase price, loan amount, interest rate, loan terms
 - Calculate NOI (Net Operating Income) from revenue, vacancy rate, estimated operating expenses, property tax 
