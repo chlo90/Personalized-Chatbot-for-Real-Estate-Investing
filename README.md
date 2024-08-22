@@ -47,7 +47,24 @@ After you finish working in the virtual environment, you can deactivate it by ru
 This command will revert your Python environment back to normal.
 
 ## Usage
-Instructions on how to use the project or its features.
+1. Set Up: Ensure all dependencies are installed, including langchain, streamlit, and other required modules.
+2. Data Input: Prepare a data file (or use 'data/redfin_sales_080924.csv' under data folder) with property details in the specified format.
+3. Running the Script: Execute the script with ```streamlit run app.py```. The script will read and process the data file and spin up a local web server to interact with Real Estate GPT. 
+
+## Upcoming Features 
+1. Find rental comparables (i.e. a way to see estimated rental revenue from similar properties nearby)
+2. Location score (i.e. how desirable is this neighborhood) based on population growth, crime rate, walkability, amenities, etc. 
+
+purchase_price, renovation_cost, loan_amount,
+                                    interest_rate, loan_term, rental_income,
+                                    operating_expenses, vacancy_rate, appreciation_rate,
+                                    sale_year, location_score, market_growth_rate
+3. Financial Investing Metrics 
+- Calculate mortage from purchase price, loan amount, interest rate, loan terms
+- Calculate NOI (Net Operating Income) from revenue, vacancy rate, estimated operating expenses, property tax 
+- Calculate cap rate (i.e. metric used to compare the profitability and return potential of different real estate investments)
+- Calculate cash-on-cash return from income, initial cost of acquisition (downpayment, closing costs, inspections etc)
+
 
 
 
