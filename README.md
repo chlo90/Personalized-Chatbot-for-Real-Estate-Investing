@@ -1,4 +1,6 @@
 # Real Estate GPT for investing
+![alt text](data/RealestateGPT_screenshot.png)
+
 This tool is designed to analyze real estate investments by calculating key financial metrics and assessing property details. 
 
 The user will be able to see the pins of property locations on the map and they can ask a series of questions to the "Real Estate Consultant" for the best property to analyze and potentially buy.  

@@ -9,7 +9,7 @@ from realestategpt import RealEstateGPT
 if 'conversation_history' not in st.session_state:
     st.session_state['conversation_history'] = []
 
-main_title = 'Find your perfect house in Austin with AI!'
+main_title = 'Find your perfect house in Austin with Real Estate GPT!'
 # Set the title of the app
 st.title(main_title)
 
