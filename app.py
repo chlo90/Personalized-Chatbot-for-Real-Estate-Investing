@@ -15,7 +15,7 @@ st.title(main_title)
 
 austin_data = pd.read_csv('data/redfin_sales_080924.csv').dropna().reset_index().drop(columns=['Unnamed: 0'])
 
-# Create the map
+# Create the map - focus on Austin MSA map
 ZOOM_LAT, ZOOM_LONG, ZOOM_START = 30.266666, -97.733330, 10
 map = folium.Map(location=[ZOOM_LAT, ZOOM_LONG], zoom_start=ZOOM_START)
 for _, row in austin_data.iterrows():
